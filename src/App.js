@@ -94,19 +94,8 @@ class App extends Component {
     console.log("file captured", event.target.files[0].name);
     const file = event.target.files[0];
     this.setState({file : file});
-    
     this.setState({tempName : file.name});
-    // const readfile = fs.createReadStream(file)
-    // this.setState({ buffer: readfile })
-    // const reader = new window.FileReader()
-    // reader.readAsArrayBuffer(file)
-    // reader.onloadend = () => {
-    //   this.setState({ buffer: Buffer(reader.result) })
-    //   console.log('buffer', this.state.buffer)
-    // }
   }
-
-
 
   onSubmit = async (event) => {
     event.preventDefault()
@@ -117,14 +106,10 @@ class App extends Component {
     this.storeFiles(uploadFile).then((cid) => {
       console.log("cid", cid);
       this.setState({ memeHash: cid });
+      this.setState({fileName : this.state.tempName});
+      console.log("yoyoyo:", this.state.memeHash);
+      this.state.contract.methods.write(this.state.memeHash, this.state.fileName).send({ from: this.state.account })
     }).catch((err) => {console.log("error", err);});
-    // console.log("cid", cid);
-    
-    this.setState({fileName : this.state.tempName});
-    console.log("yoyoyo:", this.state.memeHash);
-    this.state.contract.methods.write(this.state.memeHash, this.state.fileName).send({ from: this.state.account }).then((r) => {
-        return;
-      });
   }
 
   render() {
@@ -144,7 +129,6 @@ class App extends Component {
           <div className="row">
             <main role="main" className="col-lg-12 d-flex text-center">
               <div className="content mr-auto ml-auto">
-                {/* <h1>{this.state.memeHash}</h1> */}
                 
                   <img src={`https://${this.state.memeHash}.ipfs.dweb.link/${this.state.fileName}`} alt = "logo" />
                 
