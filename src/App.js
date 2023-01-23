@@ -107,7 +107,6 @@ class App extends Component {
       console.log("cid", cid);
       this.setState({ memeHash: cid });
       this.setState({fileName : this.state.tempName});
-      console.log("yoyoyo:", this.state.memeHash);
       this.state.contract.methods.write(this.state.memeHash, this.state.fileName).send({ from: this.state.account })
     }).catch((err) => {console.log("error", err);});
   }
@@ -122,7 +121,7 @@ class App extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            NFT of the Day
+            Pic of the Day
           </a>
         </nav>
         <div className="container-fluid mt-5">
