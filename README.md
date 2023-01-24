@@ -10,8 +10,8 @@ Prerequisites
 Running the project locally
 ---------------------------
 
-1.  Clone the repository: `git clone https://github.com/username/repo-name.git`
-2.  Navigate to the project directory: `cd repo-name`
+1.  Clone the repository: `git clone https://github.com/MumushTayal/File_Storage_IPFS.git`
+2.  Navigate to the project directory: `cd File_Storage_IPFS`
 3.  Install dependencies: `npm install`
 4.  Start the project: `npm start`
 5.  Open the project in your browser at `http://localhost:3000`
@@ -28,7 +28,9 @@ Setting up MetaMask
 Deployed version
 ----------------
 
-A deployed version of the project is available at `https://deployed-link.com`. Before accessing it, make sure to set the network inside MetaMask to Goerli.
+A deployed version of the project is available at `https://picofday-mumukshtayal.netlify.app/`. Before accessing it, make sure to set the network inside MetaMask to Goerli.
+
+- (Will soon update the code to automatically switch the network to Goerli)
 
 Note
 ----
